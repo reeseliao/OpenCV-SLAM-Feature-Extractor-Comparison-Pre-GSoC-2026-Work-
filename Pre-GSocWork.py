@@ -2,7 +2,7 @@
 import torch
 import cv2
 import numpy as np
-from lightglue import LightGlue, ALIKED
+from lightglue import LightGlue, ALIKED #can replace aliked by superpoint to see how superpoint works
 from lightglue.utils import load_image, rbd
 from lightglue import viz2d
 import matplotlib.pyplot as plt
@@ -15,11 +15,11 @@ print(f"Running on device: {device}")
 # 2. Load Models
 # Using ALIKED as the feature extractor (Proposed improvement over SuperPoint)
 print("Loading ALIKED and LightGlue models...")
-extractor = ALIKED(max_num_keypoints=2048).eval().to(device)
+extractor = ALIKED(max_num_keypoints=2048).eval().to(device) #can replace aliked by superpoint to see how superpoint works
 
 # Load LightGlue with weights trained for ALIKED
 # Note: 'features' argument must match the extractor type ('aliked')
-matcher = LightGlue(features='aliked').eval().to(device)
+matcher = LightGlue(features='aliked').eval().to(device) #can replace aliked by superpoint to see how superpoint works
 
 # 3. Load Input Images
 print("Loading images...")
@@ -73,4 +73,5 @@ print("Visualizing matches...")
 axes = viz2d.plot_images([image0, image1])
 viz2d.plot_matches(m_kpts0, m_kpts1, color='lime', lw=0.2)
 plt.show()
+
 
