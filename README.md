@@ -37,7 +37,7 @@ Translation Vector (t):
  [ 0.64... ]
  [-0.00... ]]
 ```
-|![Pose Estimation](pose_esti_result.png)|
+![Pose Estimation](pose_esti_result.png)
 ## Quick Start
 # 1. Create a clean environment
 ```
