@@ -24,16 +24,34 @@ As shown below, SuperPoint tends to generate outlier matches between the foregro
 | ![SuperPoint Result](result_superpoint.png) | ![ALIKED Result](result_aliked.png) |
 | *More outliers on boundaries* | *Higher precision & consistency* |
 
-*(Note: Please ensure `result_superpoint.png` and `result_aliked.png` are uploaded to the repo)*
 
 #### 2. Pose Estimation Output
 The system successfully recovers the camera motion using the ALIKED features, validating the frontend pipeline for the proposed SLAM system.
 
 ```text
-🤖 Visual Odometry Result:
+Visual Odometry Result(Example):
 Rotation Matrix (R):
 [[ 0.99...  -0.01...  ...]]
 Translation Vector (t):
 [[ 0.76... ]
  [ 0.64... ]
  [-0.00... ]]
+```
+|![Pose Estimation](pose_esti_result.png)|
+## Quick Start
+# 1. Create a clean environment
+```
+conda create -n gsoc_cv python=3.10
+conda activate gsoc_cv
+```
+
+# 2. Install dependencies (LightGlue & ALIKED)
+```
+pip install git+[https://github.com/cvg/LightGlue.git](https://github.com/cvg/LightGlue.git)
+pip install opencv-python matplotlib torch
+```
+
+# 3. Running the Demo
+```
+python Pre-GSoCWork.py
+```
